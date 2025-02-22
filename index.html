@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/fac7c8adb3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/app.js"></script>
+
+    <title>To-do list</title>
+  </head>
+
+  <body>
+    <div class="todo-container">
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+          type="search"
+          class="input search-input"
+          placeholder="Search tasks..."
+        />
+      </div>
+
+      <!-- Task Input Section -->
+      <div class="task-input">
+        <input
+          type="text"
+          class="input task-field"
+          placeholder="Add a new task..."
+        />
+        <select class="category-dropdown">
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="others">Others</option>
+        </select>
+        <button class="btn add-task">Add Task</button>
+      </div>
+
+      <!-- Task List -->
+      <ul class="task-list">
+        <!-- <li class="task-item">
+          <span class="task-text">Simple Task</span>
+          <div class="task-actions">
+            <button class="btn edit-task">Edit</button>
+            <button class="btn complete-task">Complete</button>
+            <button class="delete-task">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </div>
+        </li> -->
+      </ul>
+
+      <!-- Footer Options -->
+      <div class="task-footer">
+        <button class="btn clear-all">Clear All</button>
+        <button class="btn sort-tasks">Sort Tasks</button>
+      </div>
+    </div>
+  </body>
+</html>
