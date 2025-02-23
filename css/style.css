@@ -100,6 +100,12 @@ body {
   background-color: #fbfbfb;
 }
 
+.complete-task {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
 .add-task {
   background: #e57230;
   color: #fff;
@@ -142,6 +148,7 @@ body {
   align-items: center;
   padding: 8px;
   border-bottom: 1px solid #ccc;
+  margin-bottom: 4px;
 }
 
 .task-text {
@@ -164,10 +171,14 @@ body {
     width: 550px;
   }
   .task-list {
-    max-height: 142px;
+    max-height: 145px;
   }
   .btn {
     padding: 6px 14px;
+  }
+  .complete-task {
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -184,19 +195,11 @@ body {
   .task-list {
     max-height: 150px;
   }
-  .task-item {
-    flex-direction: column;
-    border-bottom: none;
-  }
+
   .task-text {
-    border-bottom: 1px solid #ccc;
-    width: 100%;
     margin-bottom: 8px;
   }
-  .task-actions {
-    /* width: 100%; */
-    margin-left: auto;
-  }
+
   .btn {
     padding: 6px 10px;
   }
