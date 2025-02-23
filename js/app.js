@@ -18,7 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
   let isSorted = false;
   let originalTasks = [];
 
-  // Load tasks from local storage
+  /*
+  This function should not mutate global scope variables
+  this should not perform any sorting operations
+  the only purpose it should have is to retrieve tasks from local storage or empty array.
+  a function should have only one responsibility
+  remove sorting operations from this function it is bad practice
+  also do not store sorted data in local storage it is also bad practice.
+  */
   function getTasksFromLocalStorage() {
     const storedTasks = JSON.parse(localStorage.getItem('taskArray')) || [];
     isSorted = JSON.parse(localStorage.getItem('isSorted')) || false;
@@ -39,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Render tasks
   function renderTasks(tasks = taskArray) {
-    taskList.innerHTML = '';
+    taskList.innerHTML = ''; // this operation should be after any guard clauses.
     if (!tasks.length) return;
 
     tasks.forEach((task, i) => {
