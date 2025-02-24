@@ -28,20 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
   */
   function getTasksFromLocalStorage() {
     const storedTasks = JSON.parse(localStorage.getItem('taskArray')) || [];
-    isSorted = JSON.parse(localStorage.getItem('isSorted')) || false;
     taskArray = storedTasks;
-
-    // If sorted state is true, sort the tasks
-    if (isSorted) {
-      originalTasks = [...taskArray];
-      taskArray.sort((a, b) => a.text.localeCompare(b.text));
-    }
   }
 
   // Save tasks to local storage
   function saveTasksToLocalStorage() {
     localStorage.setItem('taskArray', JSON.stringify(taskArray));
-    localStorage.setItem('isSorted', JSON.stringify(isSorted));
   }
 
   // Render tasks
@@ -150,7 +142,8 @@ document.addEventListener('DOMContentLoaded', function () {
       originalTasks = [...taskArray];
       taskArray.sort((a, b) => a.text.localeCompare(b.text));
     } else {
-      taskArray = [...originalTasks];
+      originalTasks = [...taskArray];
+      taskArray.sort((a, b) => b.text.localeCompare(a.text));
     }
 
     isSorted = !isSorted;
